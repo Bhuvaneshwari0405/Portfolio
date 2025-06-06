@@ -297,9 +297,10 @@
     /* Enhanced Navbar */
     .enhanced-navbar {
       background: rgba(34, 34, 34, 0.95) !important;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
       border-bottom: 1.5px solid #232946;
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(8px);
+      transition: background 0.3s, box-shadow 0.3s;
     }
     .navbar-brand {
       background: #007bff;
@@ -308,23 +309,28 @@
       font-weight: bold;
       font-size: 1.5rem;
       letter-spacing: 1px;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(0,123,255,0.10);
     }
     .navbar-brand:hover {
       background: #0056b3;
       color: #fff !important;
+      transform: scale(1.07);
+      box-shadow: 0 4px 16px rgba(0,123,255,0.18);
     }
     .navbar-nav .nav-link {
       color: #fff !important;
       font-weight: 500;
       margin: 0 0.5rem;
-      transition: color 0.2s, background 0.2s;
+      transition: color 0.2s, background 0.2s, transform 0.2s;
       border-radius: 0.5rem;
       padding: 0.5rem 1rem;
     }
     .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
       background: #007bff;
       color: #fff !important;
+      transform: scale(1.08);
+      box-shadow: 0 2px 8px rgba(0,123,255,0.10);
     }
     .btn-primary {
       background: #007bff;
@@ -337,6 +343,15 @@
     .btn-primary:hover {
       background: #0056b3;
       box-shadow: 0 4px 16px rgba(0,123,255,0.15);
+    }
+    @media (max-width: 991.98px) {
+      .enhanced-navbar {
+        backdrop-filter: blur(2px);
+      }
+      .navbar-brand {
+        font-size: 1.2rem;
+        padding: 0.3rem 1rem;
+      }
     }
 
     /* About section enhancement */
@@ -413,7 +428,7 @@
 <section class="hero">
   <div class="container">
     <h1>Hi, I'm <strong>Bhuvaneshwari C</strong></h1>
-    <p>Aspiring Full Stack Developer | IT Student | WE Scholar</p>
+    <p>Aspiring Full Stack Developer | IT Student | WE Scholar'23</p>
     <a href="#projects" class="btn btn-light mt-3">Explore Projects</a>
   </div>
 </section>
@@ -429,11 +444,11 @@
         <div class="about-card p-4 shadow-sm">
           <h2 class="section-title mb-3">About Me</h2>
           <h4 class="fw-bold mb-2" style="color:#007bff;">Aspiring Full Stack Developer</h4>
-          <p class="lead mb-3">IT Student | WE Scholar | Passionate about building impactful web solutions</p>
+          <p class="lead mb-3">IT Student | WE Scholar'23 | Passionate about building impactful web solutions</p>
           <hr class="about-divider mb-3">
           <p>I'm an IT student at MKCE and a WE Scholar by TalentSprint & Google (Top 1% from 22,000+). I enjoy solving real-world problems through web development and am skilled in PHP, Python, MySQL, and currently learning the MERN stack.</p>
           <ul class="list-unstyled about-info mb-4">
-            <li><i class="bi bi-geo-alt-fill me-2"></i>Karur, Tamil Nadu, India</li>
+            <li><i class="bi bi-geo-alt-fill me-2"></i>Rasipuram, Tamil Nadu, India</li>
             <li><i class="bi bi-mortarboard-fill me-2"></i>MKCE - B.Tech IT</li>
             <li><i class="bi bi-envelope-fill me-2"></i><a href="mailto:bhuvanachinnaduri@gmail.com">bhuvanachinnaduri@gmail.com</a></li>
           </ul>
