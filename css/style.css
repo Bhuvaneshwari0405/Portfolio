@@ -1,0 +1,14 @@
+/* style.css */
+
+/* Hero Section */
+.hero {
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Section Headings */
+section h2 {
+  margin-bottom: 30px;
+  font-weight: bold;
+}

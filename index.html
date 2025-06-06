@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhuvaneshwari C | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body {
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Navbar */
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/profile.png') center center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+    }
+
+    .section-title {
+      border-bottom: 2px solid #007bff;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .profile-img {
+      border-radius: 50%;
+      max-width: 180px;
+      border: 4px solid #007bff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    /* Cards */
+    .card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    
+    /* Contact */
+    #contact a {
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* Skills section fix */
+    #skills {
+      color: #fff;
+    }
+
+    /* Certificates section fix */
+    #certificates {
+      color: #fff;
+    }
+
+    /* Achievements section */
+    #achievements {
+      background: #f5f7fa;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    #achievements .section-title {
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 5px;
+      margin-bottom: 40px;
+      font-weight: bold;
+      font-size: 2rem;
+      display: inline-block;
+    }
+    .achievement-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 32px 24px;
+      margin-bottom: 40px;
+      border-left: 5px solid #007bff;
+    }
+    .achievement-card h5 {
+      color: #222;
+      font-weight: 600;
+    }
+    .achievement-card p {
+      color: #444;
+      font-size: 1.05rem;
+    }
+    .achievement-card img {
+      background: #f0f4f8;
+      padding: 12px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    @media (max-width: 767.98px) {
+      .achievement-card {
+        flex-direction: column !important;
+        padding: 20px 10px;
+      }
+      #achievements .section-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* About section */
+    #about {
+      background: #fff;
+    }
+
+    /* Skills section */
+    #skills {
+      background: #f5f7fa;
+      color: #232946;
+    }
+
+    /* Projects section */
+    #projects {
+      background: #fff;
+      color: #232946;
+    }
+
+    /* Certificates section */
+    #certificates {
+      background: #fff;
+      color: #232946;
+    }
+    #certificates .section-title {
+      color: #007bff;
+    }
+    #certificates .card {
+      background: #f8fafc;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    #certificates .card-title {
+      color: #232946;
+    }
+
+    /* Contact section */
+    #contact {
+      background: #f5f7fa;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      padding: 2.5rem 2rem;
+    }
+    #contact .section-title {
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 24px;
+      font-weight: bold;
+    }
+    .contact-link {
+      color: #232946;
+      font-size: 1.08rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-link:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+    .btn-linkedin {
+      background: #0077b5;
+      color: #fff;
+      border: none;
+      font-weight: 500;
+      border-radius: 2rem;
+      padding: 0.5rem 1.3rem;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(0,119,181,0.08);
+    }
+    .btn-linkedin:hover {
+      background: #005983;
+      color: #fff;
+    }
+    .btn-github {
+      background: #232946;
+      color: #fff;
+      border: none;
+      font-weight: 500;
+      border-radius: 2rem;
+      padding: 0.5rem 1.3rem;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(35,41,70,0.08);
+    }
+    .btn-github:hover {
+      background: #171a2b;
+      color: #fff;
+    }
+    @media (max-width: 767.98px) {
+      .contact-card {
+        padding: 1.5rem 0.7rem;
+      }
+    }
+
+    /* About, Achievements, Certificates: white background */
+    #about, #achievements, #certificates {
+      background: #fff;
+      color: #232946;
+    }
+
+    /* Skills, Projects, Contact: light blue/gray background */
+    #skills, #projects, #contact {
+      background: #f5f7fa;
+      color: #232946;
+    }
+
+    #certificates .section-title, #achievements .section-title, #about .section-title, #skills .section-title, #projects .section-title, #contact .section-title {
+      color: #007bff;
+    }
+    #certificates .card {
+      background: #f8fafc;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    #certificates .card-title {
+      color: #232946;
+    }
+
+    /* Skills section enhancement */
+    #skills {
+      background: #f5f7fa;
+    }
+    .skill-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+    }
+    .skill-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .skill-icon {
+      font-size: 2.5rem;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+    .skill-card h5 {
+      color: #232946;
+      font-weight: 600;
+    }
+    .skill-card ul li {
+      font-size: 1.08rem;
+      margin-bottom: 6px;
+      color: #444;
+    }
+
+    /* Enhanced Navbar */
+    .enhanced-navbar {
+      background: rgba(34, 34, 34, 0.95) !important;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      border-bottom: 1.5px solid #232946;
+      backdrop-filter: blur(4px);
+    }
+    .navbar-brand {
+      background: #007bff;
+      color: #fff !important;
+      border-radius: 2rem;
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .navbar-brand:hover {
+      background: #0056b3;
+      color: #fff !important;
+    }
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.2s, background 0.2s;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+    }
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+      background: #007bff;
+      color: #fff !important;
+    }
+    .btn-primary {
+      background: #007bff;
+      border: none;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      background: #0056b3;
+      box-shadow: 0 4px 16px rgba(0,123,255,0.15);
+    }
+
+    /* About section enhancement */
+    #about {
+      background: #fff;
+    }
+    .enhanced-profile-img {
+      width: 210px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #007bff;
+      box-shadow: 0 6px 32px rgba(0,123,255,0.10), 0 1.5px 8px rgba(0,0,0,0.07);
+      margin-bottom: 0.5rem;
+    }
+    .about-card {
+      background: #f8fafc;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+    .about-divider {
+      width: 60px;
+      border-top: 3px solid #007bff;
+      margin-left: 0;
+      opacity: 1;
+    }
+    .about-info li {
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+      color: #232946;
+    }
+    .about-info a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .about-info a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 767.98px) {
+      .about-card {
+        padding: 1.5rem 1rem;
+      }
+      .enhanced-profile-img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top enhanced-navbar">
+  <div class="container">
+    <a class="navbar-brand rounded-pill px-3 py-1" href="#">Bhuvaneshwari C</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navBar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navBar">
+      <ul class="navbar-nav ms-auto align-items-lg-center mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <a href="Bhuvaneshwari C.pdf" class="btn btn-primary ms-lg-3 mt-2 mt-lg-0" download>
+        <i class="bi bi-download me-1"></i>Download Resume
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1>Hi, I'm <strong>Bhuvaneshwari C</strong></h1>
+    <p>Aspiring Full Stack Developer | IT Student | WE Scholar</p>
+    <a href="#projects" class="btn btn-light mt-3">Explore Projects</a>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-4 text-center mb-4 mb-md-0">
+        <img src="images/hero.jpeg" alt="Bhuvaneshwari's Profile Picture" class="profile-img enhanced-profile-img mb-3">
+      </div>
+      <div class="col-md-7">
+        <div class="about-card p-4 shadow-sm">
+          <h2 class="section-title mb-3">About Me</h2>
+          <h4 class="fw-bold mb-2" style="color:#007bff;">Aspiring Full Stack Developer</h4>
+          <p class="lead mb-3">IT Student | WE Scholar | Passionate about building impactful web solutions</p>
+          <hr class="about-divider mb-3">
+          <p>I'm an IT student at MKCE and a WE Scholar by TalentSprint & Google (Top 1% from 22,000+). I enjoy solving real-world problems through web development and am skilled in PHP, Python, MySQL, and currently learning the MERN stack.</p>
+          <ul class="list-unstyled about-info mb-4">
+            <li><i class="bi bi-geo-alt-fill me-2"></i>Karur, Tamil Nadu, India</li>
+            <li><i class="bi bi-mortarboard-fill me-2"></i>MKCE - B.Tech IT</li>
+            <li><i class="bi bi-envelope-fill me-2"></i><a href="mailto:bhuvanachinnaduri@gmail.com">bhuvanachinnaduri@gmail.com</a></li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-primary">Let's Connect</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Skills</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-4 mb-4">
+        <div class="skill-card text-center p-4 h-100">
+          <div class="skill-icon mb-3">
+            <i class="bi bi-code-slash"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Languages</h5>
+          <ul class="list-unstyled mb-0">
+            <li>Python</li>
+            <li>Java</li>
+            <li>PHP</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="skill-card text-center p-4 h-100">
+          <div class="skill-icon mb-3">
+            <i class="bi bi-layers"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Frameworks</h5>
+          <ul class="list-unstyled mb-0">
+            <li>Laravel</li>
+            <li>React</li>
+            <li>Bootstrap</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="skill-card text-center p-4 h-100">
+          <div class="skill-icon mb-3">
+            <i class="bi bi-people"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Soft Skills</h5>
+          <ul class="list-unstyled mb-0">
+            <li>Leadership</li>
+            <li>Problem-Solving</li>
+            <li>Communication</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Achievements -->
+<section id="achievements" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center">Achievements</h2>
+    <div class="row align-items-center mb-5 flex-md-row achievement-card">
+      <div class="col-md-5 text-center mb-3 mb-md-0">
+        <img src="achievements/award1.jpg" alt="Achievement 1" class="img-fluid rounded shadow" style="max-width: 180px;">
+      </div>
+      <div class="col-md-7">
+        <h5 class="fw-bold">WE Scholar - Top 1% Nationwide</h5>
+        <p>Selected as a WE Scholar by TalentSprint & Google, recognized among the top 1% from 22,000+ applicants for outstanding performance and leadership in technology.</p>
+      </div>
+    </div>
+    <div class="row align-items-center mb-5 flex-md-row-reverse achievement-card">
+      <div class="col-md-5 text-center mb-3 mb-md-0">
+        <img src="achievements/award2.png" alt="Achievement 2" class="img-fluid rounded shadow" style="max-width: 180px;">
+      </div>
+      <div class="col-md-7">
+        <h5 class="fw-bold">Runner Up - Paper presentation 2024</h5>
+        <p>Won 2nd place in paper presentation in Nation level technical Symposium</p>
+      </div>
+    </div>
+    <!-- Add more achievements as needed, alternating the row direction -->
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-5 ">
+  <div class="container">
+    <h2 class="section-title text-center">Projects</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Complaint Management System</h5>
+            <p class="card-text">Platform for complaint handling with tracking and feedback.</p>
+            <a href="https://github.com/Bhuvaneshwari0405/Complaint-Management-System" class="btn btn-primary" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Task Manager</h5>
+            <p class="card-text">Laravel web app with role-based access and deadlines.</p>
+            <a href="https://github.com/Bhuvaneshwari0405/Task_Manager" class="btn btn-primary" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Expense Tracker</h5>
+            <p class="card-text">MERN app for tracking expenses with charts and analytics.</p>
+            <a href="https://github.com/Bhuvaneshwari0405/Expense_Tracker_MERN" class="btn btn-primary" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Certificates -->
+<section id="certificates" class="py-5" >
+  <div class="container">
+    <h2 class="section-title text-center">Certificates</h2>
+    <div class="row g-4">
+
+      <!-- Certificate 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="certificates/certificate1.jpg" class="card-img-top" alt="Certificate 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">PHP and MySQL</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="certificates/certificate2.jpg" class="card-img-top" alt="Certificate 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">Introduction to Industry 4.0 & IoT - NPTEL</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="certificates/certificate3.jpg" class="card-img-top" alt="Certificate 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Participated in Hackathon</h5>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="certificates/certificate4.jpg" class="card-img-top" alt="Certificate 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Programming in Java</h5>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="certificates/certificate5.png" class="card-img-top" alt="Certificate 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Getting Started with Data analytics on AWS</h5>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="certificates/certificate6.jpg" class="card-img-top" alt="Certificate 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Azure Fundamentals </h5>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Add more cards as needed -->
+      
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="contact-card p-4 shadow-sm text-center">
+          <h2 class="section-title mb-3">Contact</h2>
+          <p class="mb-3">Let's connect! You can reach me at:</p>
+          <div class="mb-4">
+            <a href="mailto:bhuvanachinnaduri@gmail.com" class="contact-link d-block mb-2">
+              <i class="bi bi-envelope-fill me-2"></i>bhuvanachinnaduri@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/bhuvaneshwari-chinnadurai-50665a258/" target="_blank" class="contact-link d-block mb-2">
+              <i class="bi bi-linkedin me-2"></i>LinkedIn
+            </a>
+            <a href="https://github.com/Bhuvaneshwari0405" target="_blank" class="contact-link d-block">
+              <i class="bi bi-github me-2"></i>GitHub
+            </a>
+          </div>
+          <div>
+            <a href="https://www.linkedin.com/in/bhuvaneshwari-chinnadurai-50665a258/" target="_blank" class="btn btn-linkedin me-2 mb-2"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
+            <a href="https://github.com/Bhuvaneshwari0405" target="_blank" class="btn btn-github mb-2"><i class="bi bi-github me-1"></i>GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Bhuvaneshwari C. All Rights Reserved.</p>
+    <a href="https://github.com/Bhuvaneshwari0405" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/bhuvaneshwari-chinnadurai-50665a258/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
